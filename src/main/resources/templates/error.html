@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error Page</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Something went wrong</h1>
+    </header>
+
+    <main>
+        <p><strong>Error Message:</strong> <span th:text="${exception}">Unknown error</span></p>
+        <p><strong>Requested URL:</strong> <span th:text="${url}">N/A</span></p>
+        <p>Please try again later or contact support if the issue persists.</p>
+        <a href="/" class="button">Return to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Todo Management App</p>
+    </footer>
+</body>
+</html>

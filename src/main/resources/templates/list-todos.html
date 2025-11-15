@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #fbc2eb);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+        }
+        .todo-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 1000px;
+            color: #2c2c2c;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .btn-custom {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #e85c50;
+        }
+        .table thead th {
+            background-color: #343a40;
+            color: white;
+        }
+        .table td, .table th {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="todo-card">
+    <h2>List of TODO's</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Target Date</th>
+                    <th>Completed</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="todo : ${todos}">
+                    <td th:text="${todo.title}">Title</td>
+                    <td th:text="${todo.description}">Description</td>
+                    <td th:text="${todo.priority}">Priority</td>
+                    <td th:text="${#dates.format(todo.targetDate, 'dd/MM/yyyy')}">Date</td>
+                    <td th:text="${todo.completed ? 'Yes' : 'No'}">Completed</td>
+                    <td>
+                        <a th:href="@{/update-todo(id=${todo.id})}" class="btn btn-sm btn-primary">Update</a>
+                        <a th:href="@{/delete-todo(id=${todo.id})}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <a href="/add-todo" class="btn btn-custom">Add New Todo</a>
+        <a href="/logout" class="btn btn-outline-dark">Logout</a>
+    </div>
+</div>
+</body>
+</html>
