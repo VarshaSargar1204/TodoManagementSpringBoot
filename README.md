@@ -20,7 +20,7 @@ A full-featured Todo Management application built with Spring Boot, Thymeleaf, a
 | Layer        | Technology                     |
 |--------------|--------------------------------|
 | Backend      | Spring Boot, Spring MVC        |
-| Frontend     | Thymeleaf, Bootstrap 5         |
+| Frontend     | Thymeleaf         |
 | Database     | H2 (in-memory)        |
 | Build Tool   | Maven                          |
 | Security     | Spring Security                |
