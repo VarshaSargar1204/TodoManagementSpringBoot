@@ -22,5 +22,7 @@ public interface ITodoService {
 
 	    //get todos by priority
 	    List<Todo> getTodosByPriority(String userName, Todo.Priority priority);
+	    
+	    List<Todo> getTodosSortedByPriority(String username);
 
 }

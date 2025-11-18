@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import todo.todo_management_spring_boot.model.Todo;
 import todo.todo_management_spring_boot.repository.TodoRepository;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +19,21 @@ public class TodoService implements ITodoService {
     @Override
     public List<Todo> getTodosByUser(String userName) {
         return todoRepository.findByUserName(userName);
+    }
+    
+    public List<Todo> getTodosSortedByPriority(String username) {
+        List<Todo> todos = todoRepository.findByUserName(username);
+
+        todos.sort(Comparator.comparingInt(todo -> {
+            switch (todo.getPriority()) {
+                case HIGH: return 0;
+                case MEDIUM: return 1;
+                case LOW: return 2;
+                default: return 3;
+            }
+        }));
+
+        return todos;
     }
 
     @Override

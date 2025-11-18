@@ -33,7 +33,7 @@ public class TodoController {
     @GetMapping("/list-todos")
     public String listTodos(ModelMap model) {
         String username = getLoggedInUserName();
-        List<Todo> todos = todoService.getTodosByUser(username);
+        List<Todo> todos = todoService.getTodosSortedByPriority(username);
         model.put("todos", todos);
         return "list-todos";
     }

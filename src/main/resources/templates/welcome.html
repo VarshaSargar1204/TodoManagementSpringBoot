@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome - Todo App</title>
+    <title>👋 Welcome - Todo App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -76,17 +76,17 @@
 <body>
 <div class="welcome-card">
     <h1>Hello, <span th:text="${name}">User</span> 🌞</h1>
-    <p class="lead">Welcome back to your Todo App. Let’s make today amazing!</p>
+    <p class="lead">👋 Welcome back to your Todo App. Let’s make today amazing!</p>
 
     <div class="quote-card">
-        <p>“The secret of getting ahead is getting started.” — Mark Twain</p>
+        <p>💡 “The secret of getting ahead is getting started.” — Mark Twain</p>
     </div>
 
     <div class="row text-center mt-4">
         <div class="col-md-4 mb-3">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
-                    <h6 class="card-title">Total Todos</h6>
+                    <h6 class="card-title">📋 Total Todos</h6>
                     <h3 class="card-text text-primary" th:text="${todosCount}">0</h3>
                     <i class="bi bi-list-task fs-4 text-primary"></i>
                 </div>
@@ -95,7 +95,7 @@
         <div class="col-md-4 mb-3">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
-                    <h6 class="card-title">Pending</h6>
+                    <h6 class="card-title">⏳ Pending</h6>
                     <h3 class="card-text text-warning" th:text="${pendingCount}">0</h3>
                     <i class="bi bi-hourglass-split fs-4 text-warning"></i>
                 </div>
@@ -104,7 +104,7 @@
         <div class="col-md-4 mb-3">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
-                    <h6 class="card-title">Completed</h6>
+                    <h6 class="card-title">✅ Completed</h6>
                     <h3 class="card-text text-success" th:text="${completedCount}">0</h3>
                     <i class="bi bi-check-circle fs-4 text-success"></i>
                 </div>
@@ -113,9 +113,9 @@
     </div>
 
     <div class="d-grid gap-2 col-8 mx-auto mt-4">
-        <a href="/list-todos" class="btn btn-custom btn-lg">View My Todos</a>
-        <a href="/add-todo" class="btn btn-outline-secondary btn-lg">Add New Todo</a>
-        <a href="/logout" class="btn btn-outline-dark btn-sm mt-3">Logout</a>
+        <a href="/list-todos" class="btn btn-custom btn-lg">📂 View My Todos</a>
+        <a href="/add-todo" class="btn btn-outline-secondary btn-lg">➕ Add New Todo</a>
+        <a href="/logout" class="btn btn-outline-dark btn-sm mt-3">🚪 Logout</a>
     </div>
 </div>
 </body>
